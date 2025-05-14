@@ -31,6 +31,8 @@ func main() {
 	app := fiber.New(fiber.Config{
 		ErrorHandler: handlers.ErrorHandler,
 		Views:        engine,
+		ReadBufferSize: 1024 * 1024, // 1MB
+		BodyLimit:     1024 * 1024,  // 1MB
 	})
 
 	// Add configuration to locals
